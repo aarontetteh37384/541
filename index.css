@@ -1,0 +1,18 @@
+h1 {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 700;
+    color: #F1F1F1;
+}
+
+h2 {
+    font-family: 'Open Sans', sans-serif;
+    font-weight: 400;
+    color: #CCCCCC;
+}
+h3 {
+    font-family: 'Open Sans', sans-serif;
+    font-weight: 600;
+    font-size: 18px;
+    color: #B0B0B0;
+    margin-top: 30px;
+}
