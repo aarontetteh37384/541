@@ -9,39 +9,136 @@
     <link rel="stylesheet" href="FAQs.css">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/all.css">
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700&family=Open+Sans&display=swap" rel="stylesheet">
+  <style>
+    .faq-container {
+      max-width: 800px;
+      margin: 0 auto;
+      background-color: #fff;
+      padding: 20px;
+      border-radius: 8px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    }
+    .faq-item {
+      margin: 10px 0;
+      border-bottom: 1px solid #ddd;
+    }
+    .faq-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      cursor: pointer;
+      font-size: 18px;
+      color: #333;
+      padding: 10px 0;
+    }
+    .faq-header:hover {
+      color: #007bff;
+    }
+    .faq-header .plus-sign {
+      font-size: 20px;
+      transition: transform 0.3s ease-in-out;
+    }
+    .faq-header.active .plus-sign {
+      transform: rotate(45deg);
+    }
+    .faq-answer {
+      padding: 10px;
+      display: none;
+      font-size: 16px;
+      color: #555;
+      animation: fadeIn 0.5s ease-out;
+    }
+    .faq-answer.show {
+      display: block;
+    }
 
+    @keyframes fadeIn {
+      0% {
+        opacity: 0;
+      }
+      100% {
+        opacity: 1;
+      }
+    }
+  </style>
 </head>
 <body>
-    <section id="faqs">
-        <h2>FAQs</h2>
-        <div class="faq">
-            <button class="faq-question">What cleaning services do you offer? <span class="toggle-icon">+</span></button>
-            <div class="faq-answer">
-                <p>We offer deep cleaning, fumigation, carpet cleaning, office cleaning, post-construction cleaning, and more.</p>
-            </div>
-        </div>
-    
-        <div class="faq">
-            <button class="faq-question">Are your cleaning products eco-friendly? <span class="toggle-icon">+</span></button>
-            <div class="faq-answer">
-                <p>Yes, we use safe, non-toxic, and eco-friendly cleaning products for all our services.</p>
-            </div>
-        </div>
-    
-        <div class="faq">
-            <button class="faq-question">How can I book a cleaning service? <span class="toggle-icon">+</span></button>
-            <div class="faq-answer">
-                <p>You can book a service through our website, by calling us, or sending us an email.</p>
-            </div>
-        </div>
-    
-        <div class="faq">
-            <button class="faq-question">Do you offer same-day cleaning services? <span class="toggle-icon">+</span></button>
-            <div class="faq-answer">
-                <p>Yes, same-day services are available based on our availability.</p>
-            </div>
-        </div>
-    </section>
+
+  <h2>FAQs</h2>
+  <div class="faq-container">
+    <div class="faq-item">
+      <div class="faq-header">
+        <span>What services do you offer?</span>
+        <span class="plus-sign">+</span>
+      </div>
+      <div class="faq-answer">
+        <p>We offer residential and commercial cleaning, including regular cleaning, deep cleaning, and specialized services like carpet cleaning and window washing.</p>
+      </div>
+    </div>
+
+    <div class="faq-item">
+      <div class="faq-header">
+        <span>How do I schedule a cleaning?</span>
+        <span class="plus-sign">+</span>
+      </div>
+      <div class="faq-answer">
+        <p>You can schedule a cleaning through our online booking system, or by calling our customer service team. We offer flexible times to accommodate your schedule.</p>
+      </div>
+    </div>
+
+    <div class="faq-item">
+      <div class="faq-header">
+        <span>Are your cleaners insured?</span>
+        <span class="plus-sign">+</span>
+      </div>
+      <div class="faq-answer">
+        <p>Yes, all of our cleaners are fully insured and undergo background checks to ensure the highest level of trust and security.</p>
+      </div>
+    </div>
+
+    <div class="faq-item">
+      <div class="faq-header">
+        <span>How much does cleaning cost?</span>
+        <span class="plus-sign">+</span>
+      </div>
+      <div class="faq-answer">
+        <p>Our pricing depends on the size of the property and the type of service required. You can get an estimate directly on our website or contact us for a personalized quote.</p>
+      </div>
+    </div>
+
+    <div class="faq-item">
+      <div class="faq-header">
+        <span>Do I need to provide cleaning supplies?</span>
+        <span class="plus-sign">+</span>
+      </div>
+      <div class="faq-answer">
+        <p>No, we provide all the necessary cleaning supplies. However, if you have specific preferences, feel free to let us know in advance.</p>
+      </div>
+    </div>
+
+    <div class="faq-item">
+      <div class="faq-header">
+        <span>What if I'm not satisfied with the cleaning?</span>
+        <span class="plus-sign">+</span>
+      </div>
+      <div class="faq-answer">
+        <p>If you're not completely satisfied with the cleaning, please contact us within 24 hours and we'll send a team back to re-clean the areas in question.</p>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    // Toggle the FAQ answers on click
+    document.querySelectorAll('.faq-header').forEach(header => {
+      header.addEventListener('click', () => {
+        const answer = header.nextElementSibling;
+          const plusSign = header.querySelector('.plus-sign');
+        
+        header.classList.toggle('active');
+        answer.classList.toggle('show');
+      });
+    });
+  </script>
     <footer>
         <p>&copy; 2025 Louright Cleaning Services. All rights reserved.</p>
 <div class="social-icons">
