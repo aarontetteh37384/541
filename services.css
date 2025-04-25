@@ -10,3 +10,7 @@ h3 {
     color: #B0B0B0;
     margin-top: 30px;
 }
+body {
+  font-family: 'Poppins', sans-serif;
+  font-weight: 300; /* Light, clean look */
+}
