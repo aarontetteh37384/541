@@ -8,10 +8,68 @@
     <link rel="stylesheet" href="aboutus.css">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/all.css">
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700&family=Open+Sans&display=swap" rel="stylesheet">
+    <style>
+  /* Hamburger button */
+  #hamburger {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    width: 30px;
+    height: 30px;
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 0;
+    z-index: 10; /* Keep above nav */
+  }
+
+  #hamburger .bar {
+    width: 100%;
+    height: 4px;
+    background-color: black;
+    border-radius: 2px;
+    transition: all 0.3s ease;
+  }
+
+  /* Transform the hamburger into X when active */
+  #hamburger.active .bar:nth-child(1) {
+    transform: rotate(45deg) translate(5px, 5px);
+  }
+
+  #hamburger.active .bar:nth-child(2) {
+    opacity: 0;
+  }
+
+  #hamburger.active .bar:nth-child(3) {
+    transform: rotate(-45deg) translate(6px, -6px);
+  }
+
+  /* Navigation links hidden by default */
+  #nav-links {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.4s ease;
+  }
+
+  #nav-links.show {
+    max-height: 300px;
+  }
+
+</style>
 </head>
 <body>
     <section id="about">
         <h2>About Us</h2>
+        <nav>
+  <button id="hamburger">
+  <span class="bar"></span>
+  <span class="bar"></span>
+  <span class="bar"></span>
+</button> <!-- Hamburger Button -->
+  <ul id="nav-links" style="display: flex column;">
+    <li><a href="index.html">Home</a></li>
+  </ul>
+</nav>
         <p>At Louright Cleaning Services, we believe a clean space lead to a healthier and happier life. We are a professional cleaning company dedicated to providing top-quality cleaning solutions for homes, offices and commercial spaces. Our team of experienced and trained professionals ensure your environment is spotless, fresh, and welcoming.
 
     </section>
@@ -33,5 +91,14 @@
             <a href="mailto:Lourightcleaning@gmail.com"> Lourightcleaning@gmail.com</a>
           </div> 
     </footer>
+    <script>
+  const hamburger = document.getElementById('hamburger');
+  const navLinks = document.getElementById('nav-links');
+
+  hamburger.addEventListener('click', () => {
+    navLinks.classList.toggle('show');
+    hamburger.classList.toggle('active'); // This triggers the "X" animation
+  });
+</script>
 </body>
 </html>
