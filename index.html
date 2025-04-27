@@ -16,14 +16,15 @@
         <div class="logo">
             <h1>LOURIGHT CLEANING SERVICES</h1>
         </div>
-        <nav>
-            <ul>
-                <li><a href="services.html">Services</a></li>
-                <li><a href="about.html">About Us</a></li>
-                <li><a href="testimonials.html">Testimonials</a></li>
-                <li><a href="FAQs.html">FAQs</a></li>
-            </ul>
-        </nav>
+       <nav>
+  <button id="hamburger">☰</button> <!-- Hamburger Button -->
+  <ul id="nav-links" style="display: none;">
+    <li><a href="services.html">Services</a></li>
+    <li><a href="about.html">About Us</a></li>
+    <li><a href="testimonials.html">Testimonials</a></li>
+    <li><a href="FAQs.html">FAQs</a></li>
+  </ul>
+</nav>
     </header>
 
     <section class="hero">
@@ -97,6 +98,18 @@
             <a href="mailto:Lourightcleaning@gmail.com"> Lourightcleaning@gmail.com</a>
           </div> 
     </footer>
+    <script>
+  const hamburger = document.getElementById('hamburger');
+  const navLinks = document.getElementById('nav-links');
+
+  hamburger.addEventListener('click', () => {
+    if (navLinks.style.display === 'none') {
+      navLinks.style.display = 'block';
+    } else {
+      navLinks.style.display = 'none';
+    }
+  });
+</script>
 </body>
 </html>
 
